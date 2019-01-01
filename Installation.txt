@@ -1,0 +1,27 @@
+
+1. Installing Prerequisites
+apt-get update
+apt-get install redis-server
+apt-get install python
+apt-get install python-pip
+apt-get install mysql-server
+apt-get install libmysqlclient-dev
+
+2. Creating User in Mysql
+service mysql start
+mysql -u root -p
+CREATE USER 'app_user'@'localhost' IDENTIFIED BY 'app_user_password';
+CREATE DATABASE app;
+GRANT ALL PRIVILEGES ON app . * TO 'app_user'@'localhost';
+
+pip install Flask
+pip install flask-sqlalchemy mysql-python
+pip install redis
+pip install requests
+pip install mysql-connector
+pip install rq
+pip freeze > requirements.txt
+
+___________________________________
+python worker.py
+python app.py

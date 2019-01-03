@@ -10,7 +10,7 @@ from worker import connect
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'a56c789269362ffade24f8555561'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://app_user:app_user_password@localhost:3306/app'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 
 db = SQLAlchemy(app)
 
